@@ -111,19 +111,19 @@ documentos_empresa_demo.csv (contenido real, sin etiquetar)
    tablero.html (semáforo verde/amarillo/rojo)
 ```
 
-### Un problema real de RAG que encontramos al probarlo
+### Recuperación por documento completo
 
-La primera versión recuperaba los 3 fragmentos sueltos con mayor puntaje, sin
-importar de qué documento venían. Eso perdía contexto: el párrafo que
-reconoce que el contrato con el proveedor de nube "no incluye cláusula de
-confidencialidad" comparte menos palabras clave con la consulta que el
-párrafo introductorio del mismo contrato, así que no entraba en el top-3 y el
-hueco quedaba invisible. La solución fue recuperar por **documento completo**
-(rankear documentos por su mejor fragmento, devolver todos sus párrafos): así
-el modelo siempre ve el documento entero, incluida la frase que revela el
-hueco, en vez de un fragmento aislado fuera de contexto.
+El recuperador rankea los documentos por su mejor fragmento y devuelve
+**todos los párrafos** de cada documento seleccionado, no fragmentos sueltos.
+La razón: el párrafo que revela un hueco suele compartir pocas palabras con
+la consulta. En el contrato con el proveedor de nube, el párrafo que
+reconoce que "no incluye cláusula de confidencialidad" puntúa menos que el
+párrafo introductorio del mismo contrato; si se recuperaran solo los
+fragmentos de mayor puntaje, ese párrafo quedaría fuera y el hueco sería
+invisible. Al recibir el documento entero, el modelo siempre ve la frase que
+revela la carencia, en su contexto.
 
-### Otro límite conocido de TF-IDF, y cómo lo mitigamos: sinónimos
+### Límite de TF-IDF con sinónimos, y cómo se mitiga
 
 TF-IDF compara **palabras**, no significado: si el requisito dice
 "consentimiento del titular" y un documento dice "autorización expresa del
@@ -155,7 +155,7 @@ Dos decisiones de diseño, siguiendo la práctica estándar de esta técnica:
 - `evaluacion.csv` exige una fila por cada uno de los 15 requisitos
   (`generar_matriz_cumplimiento.py` falla si falta alguno) y cita el
   `chunk_id` exacto, para que cualquier hallazgo sea verificable releyendo el
-  fragmento. **Desde esta versión el script lo hace cumplir**: si un
+  fragmento. **El script lo hace cumplir**: si un
   `chunk_id` citado no existe en el índice, o un veredicto CUBIERTO/PARCIAL
   no cita ningún fragmento, la matriz no se genera y el error dice exactamente
   qué fila corregir.
