@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-003 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-13 — Auditoria interna del PIMS |
 | Cláusula / control | ISO/IEC 27701:2025 9.2 (Auditoria interna); A.3.15 (revision independiente) |
 | Criticidad del requisito | MEDIA |

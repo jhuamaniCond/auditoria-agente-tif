@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-006 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-07 — Politica de autenticacion segura |
 | Cláusula / control | ISO/IEC 27701:2025 A.3.23 (Autenticacion segura) |
 | Criticidad del requisito | MEDIA |

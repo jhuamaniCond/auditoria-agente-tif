@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-008 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-12 — Clausulas de proteccion de datos con encargados/terceros |
 | Cláusula / control | ISO/IEC 27701:2025 A.1.2.7 (Acuerdos con procesadores de PII), A.3.10 (Acuerdos con proveedores) |
 | Criticidad del requisito | MEDIA |

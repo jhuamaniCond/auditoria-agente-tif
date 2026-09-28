@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-004 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-03 — Registro de actividades de tratamiento (RAT) |
 | Cláusula / control | ISO/IEC 27701:2025 A.1.2.9 (Registros de tratamiento de PII - RoPA); Ley 29733 art. 13 |
 | Criticidad del requisito | ALTA |

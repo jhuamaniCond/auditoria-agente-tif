@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-005 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-05 — Procedimiento para atender derechos ARCO de los titulares |
 | Cláusula / control | ISO/IEC 27701:2025 A.1.3.2, A.1.3.7 y A.1.3.10 (obligaciones y solicitudes de los titulares) |
 | Criticidad del requisito | MEDIA |

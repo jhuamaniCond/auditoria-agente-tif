@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | Identificador | GAP-20260928-002 |
-| Fecha de revisión | 2026-09-28 14:52:01 |
+| Fecha de revisión | 2026-09-28 16:27:47 |
 | Requisito | REQ-08 — Registro y analisis periodico de accesos a PII |
 | Cláusula / control | ISO/IEC 27701:2025 A.3.25 (Logging) |
 | Criticidad del requisito | ALTA |
