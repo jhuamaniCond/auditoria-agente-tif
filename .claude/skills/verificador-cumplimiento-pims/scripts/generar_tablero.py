@@ -9,7 +9,8 @@ rojo (SIN_EVIDENCIA), con la justificacion y la evidencia citada de cada uno.
 Es HTML y CSS planos escritos por este script (sin frameworks ni librerias
 externas): solo libreria estandar de Python (>= 3.8). Para verlo como una
 "app web", sirvelo con servir_tablero.py; para verlo directo, abre el
-archivo .html en el navegador.
+archivo .html en el navegador. El tablero es responsive (viewport + scroll
+horizontal de la tabla en pantallas pequenas).
 
 Uso:
   python generar_tablero.py --resumen resumen.json --salida tablero.html
@@ -19,6 +20,7 @@ Uso:
 import argparse
 import html
 import json
+import sys
 
 COLOR_POR_ESTADO = {
     "CUBIERTO": "#1e7e34",
@@ -40,6 +42,7 @@ PLANTILLA = """<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tablero de cumplimiento PIMS — Grupo 6</title>
 <style>
   body {{ font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 24px 32px; background: #f4f5f7; color: #1a1a1a; }}
@@ -49,14 +52,21 @@ PLANTILLA = """<!DOCTYPE html>
   .tarjeta {{ background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 10px 16px; min-width: 120px; }}
   .tarjeta .n {{ font-size: 22px; font-weight: bold; }}
   .tarjeta .t {{ font-size: 12px; color: #555; }}
-  table {{ width: 100%; border-collapse: collapse; background: #fff; }}
+  .tabla-cont {{ overflow-x: auto; }}
+  table {{ width: 100%; border-collapse: collapse; background: #fff; min-width: 760px; }}
+  caption {{ text-align: left; font-size: 12px; color: #555; padding: 0 0 6px 2px; }}
   th, td {{ text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e2e2; vertical-align: top; font-size: 13px; }}
   th {{ background: #eceff3; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }}
   .semaforo {{ display: inline-block; padding: 3px 10px; border-radius: 12px; font-weight: bold; font-size: 12px; white-space: nowrap; }}
-  .req {{ font-weight: bold; }}
+  .req {{ font-weight: bold; white-space: nowrap; }}
   .justif {{ color: #333; }}
   .evidencia {{ color: #555; font-size: 12px; }}
+  .aviso {{ color: #8a6d00; font-size: 12px; }}
   footer {{ margin-top: 20px; color: #777; font-size: 12px; }}
+  @media (max-width: 640px) {{
+    body {{ padding: 12px; }}
+    .tarjeta {{ min-width: 80px; padding: 8px 10px; }}
+  }}
 </style>
 </head>
 <body>
@@ -70,14 +80,17 @@ PLANTILLA = """<!DOCTYPE html>
     <div class="tarjeta" style="border-left:4px solid {color_sin_evidencia}"><div class="n">{sin_evidencia}</div><div class="t">Sin evidencia</div></div>
   </div>
 
+  <div class="tabla-cont">
   <table>
+    <caption>Matriz de cumplimiento por requisito (ISO/IEC 27701:2025)</caption>
     <thead>
-      <tr><th>Requisito</th><th>Nombre</th><th>Estado</th><th>Prioridad</th><th>Justificación</th><th>Evidencia citada</th></tr>
+      <tr><th scope="col">Requisito</th><th scope="col">Nombre</th><th scope="col">Estado</th><th scope="col">Prioridad</th><th scope="col">Justificación</th><th scope="col">Evidencia citada</th><th scope="col">Advertencias</th></tr>
     </thead>
     <tbody>
 {filas}
     </tbody>
   </table>
+  </div>
 
   <footer>
     {nota_documentos_no_citados}
@@ -95,7 +108,49 @@ FILA = """      <tr style="background:{fondo}">
         <td>{prioridad}</td>
         <td class="justif">{justificacion}</td>
         <td class="evidencia">{evidencia}</td>
+        <td class="aviso">{advertencias}</td>
       </tr>"""
+
+
+def cargar_resumen(ruta):
+    try:
+        with open(ruta, encoding="utf-8-sig") as f:
+            resumen = json.load(f)
+    except OSError as e:
+        sys.exit("No se pudo abrir resumen.json '%s': %s" % (ruta, e.strerror or e))
+    except json.JSONDecodeError as e:
+        sys.exit("resumen.json '%s' no es JSON valido: %s (linea %d, columna %d)"
+                 % (ruta, e.msg, e.lineno, e.colno))
+    faltan = [k for k in ("generado", "archivo_evaluacion", "requisitos_evaluados",
+                          "cubiertos", "parciales", "sin_evidencia", "resultados") if k not in resumen]
+    if faltan:
+        sys.exit("resumen.json no tiene las claves: %s (lo escribe generar_matriz_cumplimiento.py)."
+                 % ", ".join(faltan))
+    return resumen
+
+
+def fila_html(r):
+    estado = r.get("estado", "")
+    if estado not in COLOR_POR_ESTADO:
+        sys.exit("resumen.json: estado inesperado '%s' en %s (esperado: %s)."
+                 % (estado, r.get("requisito_id", "?"), " | ".join(sorted(COLOR_POR_ESTADO))))
+    for clave in ("requisito_id", "nombre", "justificacion"):
+        if clave not in r:
+            sys.exit("resumen.json: falta la clave '%s' en %s." % (clave, r.get("requisito_id", "?")))
+    evidencia = ", ".join(r.get("evidencia_citada") or []) or "—"
+    prioridad = (r.get("prioridad_atencion") or "-").upper()
+    avisos = "; ".join(r.get("advertencias") or []) or "—"
+    return FILA.format(
+        fondo=FONDO_POR_ESTADO[estado],
+        requisito_id=html.escape(r["requisito_id"]),
+        nombre=html.escape(r["nombre"]),
+        color=COLOR_POR_ESTADO[estado],
+        etiqueta=ETIQUETA_POR_ESTADO[estado],
+        prioridad=html.escape(prioridad),
+        justificacion=html.escape(r["justificacion"]),
+        evidencia=html.escape(evidencia),
+        advertencias=html.escape(avisos),
+    )
 
 
 def main():
@@ -104,24 +159,9 @@ def main():
     ap.add_argument("--salida", default="tablero.html", help="ruta del HTML a escribir")
     args = ap.parse_args()
 
-    with open(args.resumen, encoding="utf-8") as f:
-        resumen = json.load(f)
+    resumen = cargar_resumen(args.resumen)
 
-    filas_html = []
-    for r in resumen["resultados"]:
-        estado = r["estado"]
-        evidencia = ", ".join(r["evidencia_citada"]) if r["evidencia_citada"] else "—"
-        prioridad = (r["prioridad_atencion"] or "-").upper() if r["prioridad_atencion"] else "-"
-        filas_html.append(FILA.format(
-            fondo=FONDO_POR_ESTADO[estado],
-            requisito_id=html.escape(r["requisito_id"]),
-            nombre=html.escape(r["nombre"]),
-            color=COLOR_POR_ESTADO[estado],
-            etiqueta=ETIQUETA_POR_ESTADO[estado],
-            prioridad=html.escape(prioridad),
-            justificacion=html.escape(r["justificacion"]),
-            evidencia=html.escape(evidencia),
-        ))
+    filas_html = [fila_html(r) for r in resumen["resultados"]]
 
     nota_no_citados = ""
     no_citados = resumen.get("documentos_no_citados")
@@ -130,8 +170,8 @@ def main():
                             % html.escape(", ".join(no_citados)))
 
     pagina = PLANTILLA.format(
-        generado=html.escape(resumen["generado"]),
-        archivo_evaluacion=html.escape(resumen["archivo_evaluacion"]),
+        generado=html.escape(str(resumen["generado"])),
+        archivo_evaluacion=html.escape(str(resumen["archivo_evaluacion"])),
         requisitos_evaluados=resumen["requisitos_evaluados"],
         cubiertos=resumen["cubiertos"], parciales=resumen["parciales"], sin_evidencia=resumen["sin_evidencia"],
         color_cubierto=COLOR_POR_ESTADO["CUBIERTO"], color_parcial=COLOR_POR_ESTADO["PARCIAL"],
