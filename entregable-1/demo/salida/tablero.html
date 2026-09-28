@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tablero de cumplimiento PIMS — Grupo 6</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 24px 32px; background: #f4f5f7; color: #1a1a1a; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .subtitulo { color: #555; margin-bottom: 20px; }
+  .resumen { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tarjeta { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 10px 16px; min-width: 120px; }
+  .tarjeta .n { font-size: 22px; font-weight: bold; }
+  .tarjeta .t { font-size: 12px; color: #555; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e2e2; vertical-align: top; font-size: 13px; }
+  th { background: #eceff3; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; }
+  .semaforo { display: inline-block; padding: 3px 10px; border-radius: 12px; font-weight: bold; font-size: 12px; white-space: nowrap; }
+  .req { font-weight: bold; }
+  .justif { color: #333; }
+  .evidencia { color: #555; font-size: 12px; }
+  footer { margin-top: 20px; color: #777; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>Tablero de cumplimiento del PIMS — Agente de cumplimiento PIMS (Grupo 6)</h1>
+  <div class="subtitulo">Generado 2026-09-23 20:34:00 a partir de evaluacion_demo.csv</div>
+
+  <div class="resumen">
+    <div class="tarjeta"><div class="n">15</div><div class="t">Requisitos evaluados</div></div>
+    <div class="tarjeta" style="border-left:4px solid #1e7e34"><div class="n">7</div><div class="t">Cubiertos</div></div>
+    <div class="tarjeta" style="border-left:4px solid #8a6d00"><div class="n">5</div><div class="t">Parciales</div></div>
+    <div class="tarjeta" style="border-left:4px solid #a12622"><div class="n">3</div><div class="t">Sin evidencia</div></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Requisito</th><th>Nombre</th><th>Estado</th><th>Prioridad</th><th>Justificación</th><th>Evidencia citada</th></tr>
+    </thead>
+    <tbody>
+      <tr style="background:#fbe7e6">
+        <td class="req">REQ-02</td>
+        <td>Evaluacion de impacto en la privacidad (PIA) por proceso que trata PII</td>
+        <td><span class="semaforo" style="background:#a12622;color:#fff">SIN EVIDENCIA</span></td>
+        <td>ALTA</td>
+        <td class="justif">Ninguno de los documentos recuperados (política de privacidad, política de teletrabajo, procedimiento de incidentes) trata una evaluación de impacto en la privacidad; no hay evidencia de una PIA para ningún proceso.</td>
+        <td class="evidencia">—</td>
+      </tr>
+      <tr style="background:#fbe7e6">
+        <td class="req">REQ-08</td>
+        <td>Registro y analisis periodico de accesos a PII</td>
+        <td><span class="semaforo" style="background:#a12622;color:#fff">SIN EVIDENCIA</span></td>
+        <td>ALTA</td>
+        <td class="justif">Ninguno de los documentos recuperados corresponde a un reporte de análisis periódico de accesos a datos personales; el manual de accesos define permisos, pero no describe una revisión periódica de logs.</td>
+        <td class="evidencia">—</td>
+      </tr>
+      <tr style="background:#fbe7e6">
+        <td class="req">REQ-13</td>
+        <td>Auditoria interna del PIMS</td>
+        <td><span class="semaforo" style="background:#a12622;color:#fff">SIN EVIDENCIA</span></td>
+        <td>MEDIA</td>
+        <td class="justif">Ninguno de los documentos recuperados corresponde a un informe o acta de auditoría interna del PIMS.</td>
+        <td class="evidencia">—</td>
+      </tr>
+      <tr style="background:#fff6da">
+        <td class="req">REQ-03</td>
+        <td>Registro de actividades de tratamiento (RAT)</td>
+        <td><span class="semaforo" style="background:#8a6d00;color:#fff">PARCIAL</span></td>
+        <td>MEDIA</td>
+        <td class="justif">El RAT (dic. 2025) documenta 12 actividades de tratamiento con finalidad, base legal y plazo de conservación, pero el propio documento (DOC-02-03) reconoce que no incluye los convenios interinstitucionales ni la plataforma de pagos de 2026: está desactualizado respecto a la operación actual.</td>
+        <td class="evidencia">DOC-02-01, DOC-02-02, DOC-02-03</td>
+      </tr>
+      <tr style="background:#fff6da">
+        <td class="req">REQ-05</td>
+        <td>Procedimiento para atender derechos ARCO de los titulares</td>
+        <td><span class="semaforo" style="background:#8a6d00;color:#fff">PARCIAL</span></td>
+        <td>BAJA</td>
+        <td class="justif">La política de privacidad reconoce los derechos ARCO de los titulares, pero solo los enuncia: no define un procedimiento operativo (plazos, forma de solicitud, responsable de trámite) para atenderlos, que es lo que exige el requisito.</td>
+        <td class="evidencia">DOC-01-03</td>
+      </tr>
+      <tr style="background:#fff6da">
+        <td class="req">REQ-07</td>
+        <td>Politica de autenticacion segura</td>
+        <td><span class="semaforo" style="background:#8a6d00;color:#fff">PARCIAL</span></td>
+        <td>BAJA</td>
+        <td class="justif">El manual exige contraseñas de al menos 10 caracteres con cambio cada 90 días, pero el propio texto indica que no contempla autenticación multifactor para las cuentas con acceso a datos sensibles (expediente médico, datos de pago).</td>
+        <td class="evidencia">DOC-04-03</td>
+      </tr>
+      <tr style="background:#fff6da">
+        <td class="req">REQ-11</td>
+        <td>Capacitacion del personal en proteccion de datos personales</td>
+        <td><span class="semaforo" style="background:#8a6d00;color:#fff">PARCIAL</span></td>
+        <td>BAJA</td>
+        <td class="justif">Existe un plan de capacitación en seguridad de la información 2026, pero el propio plan indica que no incluye un módulo específico de protección de datos personales ni registra fechas de ejecución o asistencia.</td>
+        <td class="evidencia">DOC-07-01, DOC-07-02</td>
+      </tr>
+      <tr style="background:#fff6da">
+        <td class="req">REQ-12</td>
+        <td>Clausulas de proteccion de datos con encargados/terceros</td>
+        <td><span class="semaforo" style="background:#8a6d00;color:#fff">PARCIAL</span></td>
+        <td>BAJA</td>
+        <td class="justif">El contrato con el proveedor de nube (backups) está vigente y define niveles de servicio, pero el propio contrato indica que no incluye cláusula de confidencialidad ni de protección de datos personales para el personal del proveedor, ni trata la subcontratación.</td>
+        <td class="evidencia">DOC-06-01, DOC-06-03</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-01</td>
+        <td>Politica de privacidad aprobada y publicada</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">La Política de Privacidad v3.0 está aprobada por Resolución Rectoral N.º 045-2026 (10/03/2026), vigente y con alcance a personal, estudiantes y terceros.</td>
+        <td class="evidencia">DOC-01-01</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-04</td>
+        <td>Base legal o consentimiento documentado para el tratamiento</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">La matriz de bases legales (15/01/2026) documenta la base legal por finalidad (contrato educativo, consentimiento, obligación tributaria) conforme al Reglamento de la Ley 29733.</td>
+        <td class="evidencia">DOC-03-02</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-06</td>
+        <td>Matriz de control de acceso por rol (minimo privilegio)</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">El manual de control de accesos (01/02/2026) define la matriz de acceso por rol a los recursos con datos personales bajo mínimo privilegio, con roles y recursos explícitos.</td>
+        <td class="evidencia">DOC-04-01, DOC-04-02</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-09</td>
+        <td>Procedimiento de respuesta a incidentes de privacidad</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">El procedimiento de gestión de incidentes (v2, 01/09/2025) define fases, responsables, y exige informar a la Oficina de Protección de Datos dentro de 24 horas cuando el incidente involucre datos personales.</td>
+        <td class="evidencia">DOC-05-01, DOC-05-02, DOC-05-03</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-10</td>
+        <td>Registro de incidentes/brechas y notificaciones a la ANPD</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">El mismo procedimiento registra 2 incidentes de privacidad en el primer semestre de 2026, evaluados por el DPO, con uno notificado a la ANPD dentro del plazo legal.</td>
+        <td class="evidencia">DOC-05-04</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-14</td>
+        <td>Acciones correctivas ante no conformidades</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">El registro de acciones correctivas (10/04/2026) documenta 3 no conformidades de la revisión 2025 con causa raíz, acción, responsable y verificación de eficacia, las tres cerradas.</td>
+        <td class="evidencia">DOC-09-01, DOC-09-02</td>
+      </tr>
+      <tr style="background:#e6f4ea">
+        <td class="req">REQ-15</td>
+        <td>Minimizacion y plazos de retencion de datos personales</td>
+        <td><span class="semaforo" style="background:#1e7e34;color:#fff">CUBIERTO</span></td>
+        <td>-</td>
+        <td class="justif">El reporte de revisión de retención (01/07/2026) identifica campos innecesarios a eliminar del formulario de matrícula y confirma los plazos de retención vigentes.</td>
+        <td class="evidencia">DOC-08-01, DOC-08-02</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Documentos del inventario no citados como evidencia por ningún requisito: DOC-10, DOC-11. 
+    Este tablero es preliminar: la validación de cada hallazgo corresponde al Oficial de Protección de Datos
+    (ISO/IEC 27701:2025 §9.2; ISO 19011).
+  </footer>
+</body>
+</html>

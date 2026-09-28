@@ -1,0 +1,132 @@
+{
+  "_comentario": "Checklist de requisitos del PIMS que evalua el skill 'verificador-cumplimiento-pims'. Cada requisito se relaciona con una clausula del sistema de gestion o un control del Anexo A de ISO/IEC 27701:2025 (tabla A.1 controlador, tabla A.3 compartidos), con ISO/IEC 27002:2022 y, donde aplica, con ISO/IEC 29100 y la Ley 29733. El mapeo completo esta en conocimiento/iso27701.md. 'vigencia_max_dias' es cuantos dias puede tener la evidencia mas reciente antes de considerarse desactualizada (PARCIAL en vez de CUBIERTO).",
+
+  "requisitos": {
+    "REQ-01": {
+      "nombre": "Politica de privacidad aprobada y publicada",
+      "clausula": "ISO/IEC 27701:2025 5.2 (Politica)",
+      "descripcion": "La organizacion debe tener una politica de privacidad aprobada por la direccion, publicada y comunicada al personal y a las partes interesadas.",
+      "tipo_evidencia_esperada": ["politica"],
+      "vigencia_max_dias": 365,
+      "criticidad": "alta"
+    },
+    "REQ-02": {
+      "nombre": "Evaluacion de impacto en la privacidad (PIA) por proceso que trata PII",
+      "clausula": "ISO/IEC 27701:2025 6.1.2, A.1.2 (Evaluacion de impacto)",
+      "descripcion": "Cada proceso que trata datos personales de estudiantes debe tener una evaluacion de impacto en la privacidad vigente que identifique riesgos para los titulares.",
+      "tipo_evidencia_esperada": ["reporte"],
+      "vigencia_max_dias": 365,
+      "criticidad": "alta"
+    },
+    "REQ-03": {
+      "nombre": "Registro de actividades de tratamiento (RAT)",
+      "clausula": "ISO/IEC 27701:2025 A.3.5; Ley 29733 art. 13",
+      "descripcion": "Debe existir un registro actualizado de las actividades de tratamiento de datos personales: finalidad, categorias de datos, base legal, plazo de conservacion.",
+      "tipo_evidencia_esperada": ["registro"],
+      "vigencia_max_dias": 180,
+      "criticidad": "alta"
+    },
+    "REQ-04": {
+      "nombre": "Base legal o consentimiento documentado para el tratamiento",
+      "clausula": "ISO/IEC 27701:2025 A.1.2.1, A.1.2.6",
+      "descripcion": "Para cada finalidad de tratamiento debe existir evidencia de la base legal aplicada (consentimiento, contrato, obligacion legal) conforme a la Ley 29733.",
+      "tipo_evidencia_esperada": ["registro"],
+      "vigencia_max_dias": 365,
+      "criticidad": "alta"
+    },
+    "REQ-05": {
+      "nombre": "Procedimiento para atender derechos ARCO de los titulares",
+      "clausula": "ISO/IEC 27701:2025 A.1.3.2 (Obligaciones con los titulares de PII)",
+      "descripcion": "Debe existir un procedimiento documentado y operativo para recibir y responder solicitudes de acceso, rectificacion, cancelacion y oposicion dentro del plazo legal.",
+      "tipo_evidencia_esperada": ["procedimiento"],
+      "vigencia_max_dias": 365,
+      "criticidad": "media"
+    },
+    "REQ-06": {
+      "nombre": "Matriz de control de acceso por rol (minimo privilegio)",
+      "clausula": "ISO/IEC 27701:2025 A.3.9 (Derechos de acceso), A.3.8 (Gestion de identidad)",
+      "descripcion": "Debe existir una matriz vigente que defina, por rol, a que categorias de datos personales puede acceder y con revision periodica.",
+      "tipo_evidencia_esperada": ["procedimiento"],
+      "vigencia_max_dias": 365,
+      "criticidad": "alta"
+    },
+    "REQ-07": {
+      "nombre": "Politica de autenticacion segura",
+      "clausula": "ISO/IEC 27701:2025 A.3.23 (Autenticacion segura)",
+      "descripcion": "Debe existir una politica que exija contrasenas robustas y, para cuentas con acceso a datos sensibles, autenticacion multifactor.",
+      "tipo_evidencia_esperada": ["politica"],
+      "vigencia_max_dias": 365,
+      "criticidad": "media"
+    },
+    "REQ-08": {
+      "nombre": "Registro y analisis periodico de accesos a PII",
+      "clausula": "ISO/IEC 27701:2025 A.3.25 (Logging)",
+      "descripcion": "Los accesos a datos personales deben registrarse y analizarse periodicamente (evidencia: reporte de analisis de logs del periodo, no solo la existencia del log).",
+      "tipo_evidencia_esperada": ["reporte"],
+      "vigencia_max_dias": 90,
+      "criticidad": "alta"
+    },
+    "REQ-09": {
+      "nombre": "Procedimiento de respuesta a incidentes de privacidad",
+      "clausula": "ISO/IEC 27701:2025 A.3.11 (Preparacion), A.3.12 (Respuesta a incidentes)",
+      "descripcion": "Debe existir un procedimiento documentado, con roles y plazos, para detectar, contener y escalar incidentes que afecten datos personales.",
+      "tipo_evidencia_esperada": ["procedimiento"],
+      "vigencia_max_dias": 365,
+      "criticidad": "alta"
+    },
+    "REQ-10": {
+      "nombre": "Registro de incidentes/brechas y notificaciones a la ANPD",
+      "clausula": "ISO/IEC 27701:2025 A.3.13 (Requisitos legales); Ley 29733",
+      "descripcion": "Debe existir un registro de los incidentes de privacidad ocurridos y, cuando aplique, evidencia de la notificacion a la Autoridad Nacional de Proteccion de Datos Personales dentro del plazo.",
+      "tipo_evidencia_esperada": ["registro"],
+      "vigencia_max_dias": 180,
+      "criticidad": "alta"
+    },
+    "REQ-11": {
+      "nombre": "Capacitacion del personal en proteccion de datos personales",
+      "clausula": "ISO/IEC 27701:2025 7.2 (Competencia)",
+      "descripcion": "El personal con acceso a datos personales debe recibir capacitacion periodica sobre el PIMS y la Ley 29733, con registro de asistencia.",
+      "tipo_evidencia_esperada": ["capacitacion"],
+      "vigencia_max_dias": 365,
+      "criticidad": "media"
+    },
+    "REQ-12": {
+      "nombre": "Clausulas de proteccion de datos con encargados/terceros",
+      "clausula": "ISO/IEC 27701:2025 A.2.1 (Acuerdos con el cliente/procesador), A.1.5.5 (Registro de divulgaciones)",
+      "descripcion": "Los contratos con proveedores que procesan datos personales por cuenta de la institucion (nube, backup, encuestas) deben incluir clausulas de proteccion de datos vigentes.",
+      "tipo_evidencia_esperada": ["contrato"],
+      "vigencia_max_dias": 730,
+      "criticidad": "media"
+    },
+    "REQ-13": {
+      "nombre": "Auditoria interna del PIMS",
+      "clausula": "ISO/IEC 27701:2025 9.2 (Auditoria interna)",
+      "descripcion": "Debe existir evidencia de al menos una auditoria interna del PIMS en el ultimo periodo, con hallazgos registrados.",
+      "tipo_evidencia_esperada": ["reporte", "acta"],
+      "vigencia_max_dias": 365,
+      "criticidad": "media"
+    },
+    "REQ-14": {
+      "nombre": "Acciones correctivas ante no conformidades",
+      "clausula": "ISO/IEC 27701:2025 10.2 (No conformidad y accion correctiva)",
+      "descripcion": "Las no conformidades detectadas (en auditorias, incidentes o revisiones) deben tener un registro de causa, accion correctiva, responsable y verificacion de eficacia.",
+      "tipo_evidencia_esperada": ["registro"],
+      "vigencia_max_dias": 365,
+      "criticidad": "media"
+    },
+    "REQ-15": {
+      "nombre": "Minimizacion y plazos de retencion de datos personales",
+      "clausula": "ISO/IEC 27701:2025 A.1.4.5 (Minimizacion), A.3.5 (Clasificacion)",
+      "descripcion": "Debe existir evidencia de una revision periodica de los campos de datos personales recogidos y de los plazos de retencion/eliminacion aplicados.",
+      "tipo_evidencia_esperada": ["reporte"],
+      "vigencia_max_dias": 365,
+      "criticidad": "baja"
+    }
+  },
+
+  "prioridad": {
+    "_comentario": "Prioridad de atencion segun estado de cumplimiento y criticidad del requisito. SIN_EVIDENCIA conserva la criticidad del requisito; PARCIAL baja un nivel (algo existe, pero no es valido); CUBIERTO no genera hallazgo.",
+    "orden_criticidad": ["baja", "media", "alta"],
+    "bajar_un_nivel_si_parcial": true
+  }
+}

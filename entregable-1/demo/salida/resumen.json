@@ -1,0 +1,258 @@
+{
+  "generado": "2026-09-23 20:34:00",
+  "archivo_evaluacion": "evaluacion_demo.csv",
+  "requisitos_evaluados": 15,
+  "cubiertos": 7,
+  "parciales": 5,
+  "sin_evidencia": 3,
+  "documentos_no_citados": [
+    "DOC-10",
+    "DOC-11"
+  ],
+  "resultados": [
+    {
+      "requisito_id": "REQ-02",
+      "nombre": "Evaluacion de impacto en la privacidad (PIA) por proceso que trata PII",
+      "clausula": "ISO/IEC 27701:2025 6.1.2, A.1.2 (Evaluacion de impacto)",
+      "descripcion": "Cada proceso que trata datos personales de estudiantes debe tener una evaluacion de impacto en la privacidad vigente que identifique riesgos para los titulares.",
+      "tipo_evidencia_esperada": [
+        "reporte"
+      ],
+      "criticidad": "alta",
+      "estado": "SIN_EVIDENCIA",
+      "evidencia_citada": [],
+      "justificacion": "Ninguno de los documentos recuperados (política de privacidad, política de teletrabajo, procedimiento de incidentes) trata una evaluación de impacto en la privacidad; no hay evidencia de una PIA para ningún proceso.",
+      "prioridad_atencion": "alta"
+    },
+    {
+      "requisito_id": "REQ-08",
+      "nombre": "Registro y analisis periodico de accesos a PII",
+      "clausula": "ISO/IEC 27701:2025 A.3.25 (Logging)",
+      "descripcion": "Los accesos a datos personales deben registrarse y analizarse periodicamente (evidencia: reporte de analisis de logs del periodo, no solo la existencia del log).",
+      "tipo_evidencia_esperada": [
+        "reporte"
+      ],
+      "criticidad": "alta",
+      "estado": "SIN_EVIDENCIA",
+      "evidencia_citada": [],
+      "justificacion": "Ninguno de los documentos recuperados corresponde a un reporte de análisis periódico de accesos a datos personales; el manual de accesos define permisos, pero no describe una revisión periódica de logs.",
+      "prioridad_atencion": "alta"
+    },
+    {
+      "requisito_id": "REQ-13",
+      "nombre": "Auditoria interna del PIMS",
+      "clausula": "ISO/IEC 27701:2025 9.2 (Auditoria interna)",
+      "descripcion": "Debe existir evidencia de al menos una auditoria interna del PIMS en el ultimo periodo, con hallazgos registrados.",
+      "tipo_evidencia_esperada": [
+        "reporte",
+        "acta"
+      ],
+      "criticidad": "media",
+      "estado": "SIN_EVIDENCIA",
+      "evidencia_citada": [],
+      "justificacion": "Ninguno de los documentos recuperados corresponde a un informe o acta de auditoría interna del PIMS.",
+      "prioridad_atencion": "media"
+    },
+    {
+      "requisito_id": "REQ-03",
+      "nombre": "Registro de actividades de tratamiento (RAT)",
+      "clausula": "ISO/IEC 27701:2025 A.3.5; Ley 29733 art. 13",
+      "descripcion": "Debe existir un registro actualizado de las actividades de tratamiento de datos personales: finalidad, categorias de datos, base legal, plazo de conservacion.",
+      "tipo_evidencia_esperada": [
+        "registro"
+      ],
+      "criticidad": "alta",
+      "estado": "PARCIAL",
+      "evidencia_citada": [
+        "DOC-02-01",
+        "DOC-02-02",
+        "DOC-02-03"
+      ],
+      "justificacion": "El RAT (dic. 2025) documenta 12 actividades de tratamiento con finalidad, base legal y plazo de conservación, pero el propio documento (DOC-02-03) reconoce que no incluye los convenios interinstitucionales ni la plataforma de pagos de 2026: está desactualizado respecto a la operación actual.",
+      "prioridad_atencion": "media"
+    },
+    {
+      "requisito_id": "REQ-05",
+      "nombre": "Procedimiento para atender derechos ARCO de los titulares",
+      "clausula": "ISO/IEC 27701:2025 A.1.3.2 (Obligaciones con los titulares de PII)",
+      "descripcion": "Debe existir un procedimiento documentado y operativo para recibir y responder solicitudes de acceso, rectificacion, cancelacion y oposicion dentro del plazo legal.",
+      "tipo_evidencia_esperada": [
+        "procedimiento"
+      ],
+      "criticidad": "media",
+      "estado": "PARCIAL",
+      "evidencia_citada": [
+        "DOC-01-03"
+      ],
+      "justificacion": "La política de privacidad reconoce los derechos ARCO de los titulares, pero solo los enuncia: no define un procedimiento operativo (plazos, forma de solicitud, responsable de trámite) para atenderlos, que es lo que exige el requisito.",
+      "prioridad_atencion": "baja"
+    },
+    {
+      "requisito_id": "REQ-07",
+      "nombre": "Politica de autenticacion segura",
+      "clausula": "ISO/IEC 27701:2025 A.3.23 (Autenticacion segura)",
+      "descripcion": "Debe existir una politica que exija contrasenas robustas y, para cuentas con acceso a datos sensibles, autenticacion multifactor.",
+      "tipo_evidencia_esperada": [
+        "politica"
+      ],
+      "criticidad": "media",
+      "estado": "PARCIAL",
+      "evidencia_citada": [
+        "DOC-04-03"
+      ],
+      "justificacion": "El manual exige contraseñas de al menos 10 caracteres con cambio cada 90 días, pero el propio texto indica que no contempla autenticación multifactor para las cuentas con acceso a datos sensibles (expediente médico, datos de pago).",
+      "prioridad_atencion": "baja"
+    },
+    {
+      "requisito_id": "REQ-11",
+      "nombre": "Capacitacion del personal en proteccion de datos personales",
+      "clausula": "ISO/IEC 27701:2025 7.2 (Competencia)",
+      "descripcion": "El personal con acceso a datos personales debe recibir capacitacion periodica sobre el PIMS y la Ley 29733, con registro de asistencia.",
+      "tipo_evidencia_esperada": [
+        "capacitacion"
+      ],
+      "criticidad": "media",
+      "estado": "PARCIAL",
+      "evidencia_citada": [
+        "DOC-07-01",
+        "DOC-07-02"
+      ],
+      "justificacion": "Existe un plan de capacitación en seguridad de la información 2026, pero el propio plan indica que no incluye un módulo específico de protección de datos personales ni registra fechas de ejecución o asistencia.",
+      "prioridad_atencion": "baja"
+    },
+    {
+      "requisito_id": "REQ-12",
+      "nombre": "Clausulas de proteccion de datos con encargados/terceros",
+      "clausula": "ISO/IEC 27701:2025 A.2.1 (Acuerdos con el cliente/procesador), A.1.5.5 (Registro de divulgaciones)",
+      "descripcion": "Los contratos con proveedores que procesan datos personales por cuenta de la institucion (nube, backup, encuestas) deben incluir clausulas de proteccion de datos vigentes.",
+      "tipo_evidencia_esperada": [
+        "contrato"
+      ],
+      "criticidad": "media",
+      "estado": "PARCIAL",
+      "evidencia_citada": [
+        "DOC-06-01",
+        "DOC-06-03"
+      ],
+      "justificacion": "El contrato con el proveedor de nube (backups) está vigente y define niveles de servicio, pero el propio contrato indica que no incluye cláusula de confidencialidad ni de protección de datos personales para el personal del proveedor, ni trata la subcontratación.",
+      "prioridad_atencion": "baja"
+    },
+    {
+      "requisito_id": "REQ-01",
+      "nombre": "Politica de privacidad aprobada y publicada",
+      "clausula": "ISO/IEC 27701:2025 5.2 (Politica)",
+      "descripcion": "La organizacion debe tener una politica de privacidad aprobada por la direccion, publicada y comunicada al personal y a las partes interesadas.",
+      "tipo_evidencia_esperada": [
+        "politica"
+      ],
+      "criticidad": "alta",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-01-01"
+      ],
+      "justificacion": "La Política de Privacidad v3.0 está aprobada por Resolución Rectoral N.º 045-2026 (10/03/2026), vigente y con alcance a personal, estudiantes y terceros.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-04",
+      "nombre": "Base legal o consentimiento documentado para el tratamiento",
+      "clausula": "ISO/IEC 27701:2025 A.1.2.1, A.1.2.6",
+      "descripcion": "Para cada finalidad de tratamiento debe existir evidencia de la base legal aplicada (consentimiento, contrato, obligacion legal) conforme a la Ley 29733.",
+      "tipo_evidencia_esperada": [
+        "registro"
+      ],
+      "criticidad": "alta",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-03-02"
+      ],
+      "justificacion": "La matriz de bases legales (15/01/2026) documenta la base legal por finalidad (contrato educativo, consentimiento, obligación tributaria) conforme al Reglamento de la Ley 29733.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-06",
+      "nombre": "Matriz de control de acceso por rol (minimo privilegio)",
+      "clausula": "ISO/IEC 27701:2025 A.3.9 (Derechos de acceso), A.3.8 (Gestion de identidad)",
+      "descripcion": "Debe existir una matriz vigente que defina, por rol, a que categorias de datos personales puede acceder y con revision periodica.",
+      "tipo_evidencia_esperada": [
+        "procedimiento"
+      ],
+      "criticidad": "alta",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-04-01",
+        "DOC-04-02"
+      ],
+      "justificacion": "El manual de control de accesos (01/02/2026) define la matriz de acceso por rol a los recursos con datos personales bajo mínimo privilegio, con roles y recursos explícitos.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-09",
+      "nombre": "Procedimiento de respuesta a incidentes de privacidad",
+      "clausula": "ISO/IEC 27701:2025 A.3.11 (Preparacion), A.3.12 (Respuesta a incidentes)",
+      "descripcion": "Debe existir un procedimiento documentado, con roles y plazos, para detectar, contener y escalar incidentes que afecten datos personales.",
+      "tipo_evidencia_esperada": [
+        "procedimiento"
+      ],
+      "criticidad": "alta",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-05-01",
+        "DOC-05-02",
+        "DOC-05-03"
+      ],
+      "justificacion": "El procedimiento de gestión de incidentes (v2, 01/09/2025) define fases, responsables, y exige informar a la Oficina de Protección de Datos dentro de 24 horas cuando el incidente involucre datos personales.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-10",
+      "nombre": "Registro de incidentes/brechas y notificaciones a la ANPD",
+      "clausula": "ISO/IEC 27701:2025 A.3.13 (Requisitos legales); Ley 29733",
+      "descripcion": "Debe existir un registro de los incidentes de privacidad ocurridos y, cuando aplique, evidencia de la notificacion a la Autoridad Nacional de Proteccion de Datos Personales dentro del plazo.",
+      "tipo_evidencia_esperada": [
+        "registro"
+      ],
+      "criticidad": "alta",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-05-04"
+      ],
+      "justificacion": "El mismo procedimiento registra 2 incidentes de privacidad en el primer semestre de 2026, evaluados por el DPO, con uno notificado a la ANPD dentro del plazo legal.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-14",
+      "nombre": "Acciones correctivas ante no conformidades",
+      "clausula": "ISO/IEC 27701:2025 10.2 (No conformidad y accion correctiva)",
+      "descripcion": "Las no conformidades detectadas (en auditorias, incidentes o revisiones) deben tener un registro de causa, accion correctiva, responsable y verificacion de eficacia.",
+      "tipo_evidencia_esperada": [
+        "registro"
+      ],
+      "criticidad": "media",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-09-01",
+        "DOC-09-02"
+      ],
+      "justificacion": "El registro de acciones correctivas (10/04/2026) documenta 3 no conformidades de la revisión 2025 con causa raíz, acción, responsable y verificación de eficacia, las tres cerradas.",
+      "prioridad_atencion": null
+    },
+    {
+      "requisito_id": "REQ-15",
+      "nombre": "Minimizacion y plazos de retencion de datos personales",
+      "clausula": "ISO/IEC 27701:2025 A.1.4.5 (Minimizacion), A.3.5 (Clasificacion)",
+      "descripcion": "Debe existir evidencia de una revision periodica de los campos de datos personales recogidos y de los plazos de retencion/eliminacion aplicados.",
+      "tipo_evidencia_esperada": [
+        "reporte"
+      ],
+      "criticidad": "baja",
+      "estado": "CUBIERTO",
+      "evidencia_citada": [
+        "DOC-08-01",
+        "DOC-08-02"
+      ],
+      "justificacion": "El reporte de revisión de retención (01/07/2026) identifica campos innecesarios a eliminar del formulario de matrícula y confirma los plazos de retención vigentes.",
+      "prioridad_atencion": null
+    }
+  ]
+}
