@@ -1,1 +1,6 @@
 docs
+# Temporales/bloqueos de Office (~$archivo.pptx, ~$archivo.docx)
+~$*
+*.tmp
+__pycache__/
+*.pyc
