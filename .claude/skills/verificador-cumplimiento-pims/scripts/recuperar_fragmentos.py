@@ -37,6 +37,7 @@ import argparse
 import json
 import math
 import re
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 
@@ -136,8 +137,23 @@ def similitud_coseno(v1, v2):
 
 
 def construir_consulta(req_id, requisito):
-    partes = [requisito["nombre"], requisito["descripcion"]] + requisito.get("tipo_evidencia_esperada", [])
-    return " ".join(partes)
+    nombre = (requisito.get("nombre") or "").strip()
+    descripcion = (requisito.get("descripcion") or "").strip()
+    tipos = " ".join(requisito.get("tipo_evidencia_esperada") or [])
+    partes = [nombre, descripcion, tipos]
+    return " ".join(p for p in partes if p)
+
+
+def cargar_json(ruta, descripcion):
+    """Lee un JSON con mensajes de error claros en vez de traceback crudo."""
+    try:
+        with open(ruta, encoding="utf-8-sig") as f:
+            return json.load(f)
+    except OSError as e:
+        sys.exit("No se pudo leer %s '%s': %s" % (descripcion, ruta, e.strerror or e))
+    except json.JSONDecodeError as e:
+        sys.exit("%s '%s' no es JSON valido: %s (linea %d, columna %d)"
+                 % (descripcion, ruta, e.msg, e.lineno, e.colno))
 
 
 def recuperar(chunks, requisitos, top_k, umbral, usar_sinonimos=True):
@@ -196,10 +212,16 @@ def main():
     ap.add_argument("--sin-sinonimos", action="store_true", help="desactiva la expansion de consulta con el glosario del dominio (para comparar)")
     args = ap.parse_args()
 
-    with open(args.indice, encoding="utf-8") as f:
-        chunks = json.load(f)["chunks"]
-    with open(args.requisitos, encoding="utf-8") as f:
-        requisitos = json.load(f)["requisitos"]
+    indice = cargar_json(args.indice, "el indice")
+    if "chunks" not in indice:
+        sys.exit("El indice '%s' no tiene la clave 'chunks' (debio escribirlo indexar_documentos.py)." % args.indice)
+    chunks = indice["chunks"]
+    requisitos_cfg = cargar_json(args.requisitos, "requisitos.json")
+    if "requisitos" not in requisitos_cfg:
+        sys.exit("'%s' no tiene la clave 'requisitos'." % args.requisitos)
+    requisitos = requisitos_cfg["requisitos"]
+    if not chunks:
+        print("ADVERTENCIA: el indice no tiene fragmentos; todos los requisitos quedaran sin recuperacion.")
 
     resultados = recuperar(chunks, requisitos, args.top_k, args.umbral, usar_sinonimos=not args.sin_sinonimos)
 
