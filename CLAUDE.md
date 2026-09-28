@@ -13,8 +13,9 @@ apoyo 27001, 27002, 29100, ISO 19011, Ley 29733).
   web con semáforos (todo con solo librería estándar de Python).
 - Asistente: `.claude/agents/auditor-cumplimiento-pims.md`.
 - Enunciado y tema: `instrucciones/`.
-- Entregable 1: `entregable-1/` (documentación por tarea + demo);
-  `docs/` (en la raíz) genera el informe `.docx` del entregable 1.
+- Entregable 1: `entregable-1/` (documentación por tarea + demo + informe
+  `.docx`). La carpeta `docs/` (generadores del informe) no se rastrea en git.
+- Pruebas: `python -m unittest discover -s tests` (24 pruebas, solo stdlib).
 
 Cuando el usuario entregue documentos/políticas/contratos o pregunte qué
 requisitos del PIMS están cubiertos, usa el skill; para preguntas normativas
