@@ -21,3 +21,16 @@ requisitos del PIMS están cubiertos, usa el skill; para preguntas normativas
 sin evidencia que evaluar, usa el asistente. Todo en español. Python solo con
 librería estándar (incluida la recuperación RAG: sin embeddings ni librerías
 externas, TF-IDF léxico a mano).
+
+## Convención de commits
+
+- Un commit simple y corto por cada cambio lógico; NUNCA agrupar archivos
+  distintos en un solo commit salvo que formen parte del mismo cambio.
+- Mensaje en un solo modo imperativo + qué se hizo:
+  - `Fix <archivo>: <qué se corrigió>` (bugs)
+  - `Add <archivo o función>: <qué se agregó>` (funcionalidad/archivos nuevos)
+  - `Update <archivo>: <qué y por qué>` (cambios de contenido/config)
+  - `Delete <archivo>: <motivo>` (eliminaciones)
+- No tocar el `.pptx` ni los entregables en formato oficina sin que el
+  usuario lo pida explícitamente.
+- Probar con `python -m unittest discover -s tests` antes de commitear.
