@@ -152,3 +152,14 @@ plataforma. El mismo diseño se traslada a:
 Elegimos Claude Code porque permite que el asistente **ejecute** el skill y
 **lea** el contenido recuperado (no solo lo describa), que es lo que exige
 el resultado "skill funcional".
+
+## Trabajo futuro
+
+- Segundo entregable del curso: diseño formal del agente (objetivo, datos,
+  contexto y herramientas), orquestación de skills/asistentes en flujos y
+  proyecto agéntico integrado.
+- Evaluar la estabilidad del juicio del modelo: N lecturas del mismo corpus y
+  medición del acuerdo entre ellas (hoy la trazabilidad es cualitativa: cada
+  veredicto cita el `chunk_id` exacto y la matriz rechaza citas inexistentes).
+- Extracción automática de texto desde PDF/Word para construir el CSV de
+  entrada sin paso manual.

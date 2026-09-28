@@ -93,3 +93,14 @@ contenido realmente cumple.
 - Si algo es una **decisión de la organización** (¿el PIMS está listo para
   certificación?) → no va a ninguno de los dos; se deja como pendiente en la
   sección de seguimiento del hallazgo.
+
+## Trabajo futuro
+
+- Medir la calidad de recuperación con recall/precisión sobre un ground truth
+  (hecho en `02-creacion-de-skill.md`, sección 4.1: recall 100%, precisión 29%
+  en la demo) y re-validar al cambiar el glosario de sinónimos.
+- Endurecer el pipeline con validación automática de citas y control de
+  vigencia (`generar_matriz_cumplimiento.py`), con suite de pruebas en
+  `tests/`.
+- Reutilizar el proceso (prompt → skill → pasos) para otros checklists: otra
+  copia de `requisitos.json` parametriza el skill sin tocar los scripts.
