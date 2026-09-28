@@ -1,11 +1,11 @@
-# Hallazgo de cumplimiento PIMS — GAP-20260923-004
+# Hallazgo de cumplimiento PIMS — GAP-20260928-004
 
 | Campo | Valor |
 |---|---|
-| Identificador | GAP-20260923-004 |
-| Fecha de revisión | 2026-09-23 20:34:00 |
+| Identificador | GAP-20260928-004 |
+| Fecha de revisión | 2026-09-28 14:52:01 |
 | Requisito | REQ-03 — Registro de actividades de tratamiento (RAT) |
-| Cláusula / control | ISO/IEC 27701:2025 A.3.5; Ley 29733 art. 13 |
+| Cláusula / control | ISO/IEC 27701:2025 A.1.2.9 (Registros de tratamiento de PII - RoPA); Ley 29733 art. 13 |
 | Criticidad del requisito | ALTA |
 | Estado de cumplimiento | **PARCIAL** |
 | Prioridad de atención | **MEDIA** |

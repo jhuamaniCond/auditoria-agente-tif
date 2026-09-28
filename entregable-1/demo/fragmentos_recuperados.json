@@ -265,8 +265,8 @@
       "responsable": "Asesoría Legal",
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matriz de bases legales por finalidad de tratamiento, elaborada por Asesoría Legal el 15 de enero de 2026, vigente para el periodo 2026.",
-      "score": 0.1943,
-      "score_documento": 0.1943
+      "score": 0.1925,
+      "score_documento": 0.1925
     },
     {
       "chunk_id": "DOC-03-02",
@@ -277,7 +277,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matrícula y gestión académica: base legal de ejecución de contrato educativo. Becas y bienestar: consentimiento expreso del titular o representante legal. Tesorería y cobranza: ejecución contractual y obligación legal tributaria. Investigación con datos de egresados: consentimiento informado y específico.",
       "score": 0.1049,
-      "score_documento": 0.1943
+      "score_documento": 0.1925
     },
     {
       "chunk_id": "DOC-03-03",
@@ -288,7 +288,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "La matriz se revisa anualmente o cuando se incorpore una nueva finalidad de tratamiento no contemplada.",
       "score": 0.1228,
-      "score_documento": 0.1943
+      "score_documento": 0.1925
     },
     {
       "chunk_id": "DOC-09-01",
@@ -366,7 +366,7 @@
       "responsable": "Asesoría Legal",
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matriz de bases legales por finalidad de tratamiento, elaborada por Asesoría Legal el 15 de enero de 2026, vigente para el periodo 2026.",
-      "score": 0.213,
+      "score": 0.211,
       "score_documento": 0.4758
     },
     {
@@ -722,8 +722,8 @@
       "responsable": "Asesoría Legal",
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matriz de bases legales por finalidad de tratamiento, elaborada por Asesoría Legal el 15 de enero de 2026, vigente para el periodo 2026.",
-      "score": 0.1516,
-      "score_documento": 0.1516
+      "score": 0.1502,
+      "score_documento": 0.1502
     },
     {
       "chunk_id": "DOC-03-02",
@@ -734,7 +734,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matrícula y gestión académica: base legal de ejecución de contrato educativo. Becas y bienestar: consentimiento expreso del titular o representante legal. Tesorería y cobranza: ejecución contractual y obligación legal tributaria. Investigación con datos de egresados: consentimiento informado y específico.",
       "score": 0.007,
-      "score_documento": 0.1516
+      "score_documento": 0.1502
     },
     {
       "chunk_id": "DOC-03-03",
@@ -745,7 +745,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "La matriz se revisa anualmente o cuando se incorpore una nueva finalidad de tratamiento no contemplada.",
       "score": 0.0999,
-      "score_documento": 0.1516
+      "score_documento": 0.1502
     },
     {
       "chunk_id": "DOC-05-01",
@@ -801,8 +801,8 @@
       "responsable": "Seguridad TI",
       "ubicacion": "drive/pims/manual_acceso.pdf",
       "texto": "Manual de control de accesos y gestión de identidad, aprobado el 1 de febrero de 2026 por Seguridad TI. Define la matriz de acceso por rol a los recursos de datos personales: ficha de estudiante, expediente académico, expediente médico, notas y datos de pago, bajo el principio de mínimo privilegio.",
-      "score": 0.0385,
-      "score_documento": 0.2965
+      "score": 0.0375,
+      "score_documento": 0.2892
     },
     {
       "chunk_id": "DOC-04-02",
@@ -812,8 +812,8 @@
       "responsable": "Seguridad TI",
       "ubicacion": "drive/pims/manual_acceso.pdf",
       "texto": "Los roles docente, administrativo, bienestar y tesorería tienen acceso restringido a los recursos que su función requiere. El rol oficial de privacidad y el rol sistema tienen acceso completo para fines de administración y auditoría.",
-      "score": 0.047,
-      "score_documento": 0.2965
+      "score": 0.0458,
+      "score_documento": 0.2892
     },
     {
       "chunk_id": "DOC-04-03",
@@ -823,8 +823,8 @@
       "responsable": "Seguridad TI",
       "ubicacion": "drive/pims/manual_acceso.pdf",
       "texto": "Requisitos de contraseña: longitud mínima de 10 caracteres, combinación de mayúsculas, minúsculas y números, cambio obligatorio cada 90 días. El manual no contempla, a la fecha, un mecanismo de autenticación multifactor para las cuentas con acceso a datos sensibles (expediente médico, datos de pago).",
-      "score": 0.2965,
-      "score_documento": 0.2965
+      "score": 0.2892,
+      "score_documento": 0.2892
     },
     {
       "chunk_id": "DOC-01-01",
@@ -834,8 +834,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/politicas/privacidad_v3.pdf",
       "texto": "Política de Privacidad de la Información, versión 3.0, aprobada por Resolución Rectoral N.º 045-2026 el 10 de marzo de 2026. Aplica a todo el personal, estudiantes y terceros que traten datos personales en nombre de la institución.",
-      "score": 0.1361,
-      "score_documento": 0.1417
+      "score": 0.1328,
+      "score_documento": 0.1382
     },
     {
       "chunk_id": "DOC-01-02",
@@ -845,8 +845,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/politicas/privacidad_v3.pdf",
       "texto": "Principios rectores: legalidad, consentimiento informado, finalidad, proporcionalidad, calidad, seguridad y disponibilidad de los datos, conforme a la Ley N.º 29733 y su reglamento.",
-      "score": 0.0116,
-      "score_documento": 0.1417
+      "score": 0.0113,
+      "score_documento": 0.1382
     },
     {
       "chunk_id": "DOC-01-03",
@@ -856,8 +856,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/politicas/privacidad_v3.pdf",
       "texto": "La institución reconoce a los titulares los derechos de acceso, rectificación, cancelación y oposición sobre sus datos personales, ejercibles mediante solicitud a la Oficina de Protección de Datos.",
-      "score": 0.0543,
-      "score_documento": 0.1417
+      "score": 0.0529,
+      "score_documento": 0.1382
     },
     {
       "chunk_id": "DOC-01-04",
@@ -867,8 +867,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/politicas/privacidad_v3.pdf",
       "texto": "Los datos personales de estudiantes se conservarán durante la relación académica y hasta cinco años después de concluida, salvo obligación legal de conservación mayor.",
-      "score": 0.0107,
-      "score_documento": 0.1417
+      "score": 0.0104,
+      "score_documento": 0.1382
     },
     {
       "chunk_id": "DOC-01-05",
@@ -878,8 +878,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/politicas/privacidad_v3.pdf",
       "texto": "Toda modificación a la presente política requiere aprobación del Comité de Privacidad y se comunica a la comunidad universitaria dentro de los 30 días siguientes.",
-      "score": 0.1417,
-      "score_documento": 0.1417
+      "score": 0.1382,
+      "score_documento": 0.1382
     },
     {
       "chunk_id": "DOC-10-01",
@@ -889,8 +889,8 @@
       "responsable": "Recursos Humanos",
       "ubicacion": "intranet/politicas/teletrabajo.pdf",
       "texto": "Política de teletrabajo y trabajo remoto, aprobada el 1 de febrero de 2026 por Recursos Humanos. Regula horarios flexibles, uso de equipos institucionales fuera de las instalaciones y evaluación de desempeño remoto. No hace referencia al tratamiento de datos personales ni a la Ley N.º 29733.",
-      "score": 0.1152,
-      "score_documento": 0.1152
+      "score": 0.1124,
+      "score_documento": 0.1124
     },
     {
       "chunk_id": "DOC-05-01",
@@ -900,8 +900,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Procedimiento de gestión de incidentes de seguridad de la información, versión 2, del 1 de septiembre de 2025. Aplica a incidentes que afecten la confidencialidad, integridad o disponibilidad de los sistemas institucionales.",
-      "score": 0.0,
-      "score_documento": 0.0849
+      "score": 0.0544,
+      "score_documento": 0.0828
     },
     {
       "chunk_id": "DOC-05-02",
@@ -911,8 +911,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Fases del procedimiento: detección y reporte, contención, erradicación, recuperación y lecciones aprendidas. El responsable de cada fase es el equipo de Seguridad TI, con escalamiento a la Dirección de Sistemas.",
-      "score": 0.0,
-      "score_documento": 0.0849
+      "score": 0.0501,
+      "score_documento": 0.0828
     },
     {
       "chunk_id": "DOC-05-03",
@@ -922,8 +922,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Cuando el incidente involucre datos personales, se debe informar a la Oficina de Protección de Datos dentro de las 24 horas de detectado, para que esta evalúe si corresponde notificar a la Autoridad Nacional de Protección de Datos Personales dentro del plazo legal.",
-      "score": 0.0849,
-      "score_documento": 0.0849
+      "score": 0.0828,
+      "score_documento": 0.0828
     },
     {
       "chunk_id": "DOC-05-04",
@@ -933,8 +933,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Registro de incidentes 2026 (primer semestre): 2 incidentes menores relacionados con datos personales, ambos evaluados por el DPO; uno de ellos fue notificado a la ANPD dentro del plazo, con constancia adjunta.",
-      "score": 0.0091,
-      "score_documento": 0.0849
+      "score": 0.0089,
+      "score_documento": 0.0828
     }
   ],
   "REQ-08": [
@@ -1137,8 +1137,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Procedimiento de gestión de incidentes de seguridad de la información, versión 2, del 1 de septiembre de 2025. Aplica a incidentes que afecten la confidencialidad, integridad o disponibilidad de los sistemas institucionales.",
-      "score": 0.2309,
-      "score_documento": 0.4092
+      "score": 0.2811,
+      "score_documento": 0.3985
     },
     {
       "chunk_id": "DOC-05-02",
@@ -1148,8 +1148,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Fases del procedimiento: detección y reporte, contención, erradicación, recuperación y lecciones aprendidas. El responsable de cada fase es el equipo de Seguridad TI, con escalamiento a la Dirección de Sistemas.",
-      "score": 0.0,
-      "score_documento": 0.4092
+      "score": 0.0518,
+      "score_documento": 0.3985
     },
     {
       "chunk_id": "DOC-05-03",
@@ -1159,8 +1159,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Cuando el incidente involucre datos personales, se debe informar a la Oficina de Protección de Datos dentro de las 24 horas de detectado, para que esta evalúe si corresponde notificar a la Autoridad Nacional de Protección de Datos Personales dentro del plazo legal.",
-      "score": 0.3776,
-      "score_documento": 0.4092
+      "score": 0.3677,
+      "score_documento": 0.3985
     },
     {
       "chunk_id": "DOC-05-04",
@@ -1170,8 +1170,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "intranet/procedimientos/incidentes_v2.pdf",
       "texto": "Registro de incidentes 2026 (primer semestre): 2 incidentes menores relacionados con datos personales, ambos evaluados por el DPO; uno de ellos fue notificado a la ANPD dentro del plazo, con constancia adjunta.",
-      "score": 0.4092,
-      "score_documento": 0.4092
+      "score": 0.3985,
+      "score_documento": 0.3985
     },
     {
       "chunk_id": "DOC-09-01",
@@ -1181,8 +1181,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "drive/pims/acciones_correctivas.xlsx",
       "texto": "Registro de acciones correctivas del Sistema de Gestión de Privacidad de la Información, actualizado el 10 de abril de 2026.",
-      "score": 0.195,
-      "score_documento": 0.195
+      "score": 0.1899,
+      "score_documento": 0.1899
     },
     {
       "chunk_id": "DOC-09-02",
@@ -1192,8 +1192,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "drive/pims/acciones_correctivas.xlsx",
       "texto": "Incluye 3 no conformidades detectadas en la revisión de 2025: (1) falta de registro de capacitaciones, (2) matriz de acceso desactualizada, (3) ausencia de plazos de retención documentados. Para cada una se registra causa raíz, acción correctiva, responsable y verificación de eficacia; las tres están cerradas y verificadas.",
-      "score": 0.0815,
-      "score_documento": 0.195
+      "score": 0.0794,
+      "score_documento": 0.1899
     },
     {
       "chunk_id": "DOC-02-01",
@@ -1203,8 +1203,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "drive/pims/rat_2025.xlsx",
       "texto": "Registro de Actividades de Tratamiento de Datos Personales (RAT), versión de diciembre de 2025. Documenta doce actividades de tratamiento: matrícula, gestión académica, bienestar universitario, tesorería, biblioteca, egresados, admisión, becas, convenios, movilidad estudiantil, investigación y comunicaciones institucionales.",
-      "score": 0.0995,
-      "score_documento": 0.1303
+      "score": 0.0969,
+      "score_documento": 0.1268
     },
     {
       "chunk_id": "DOC-02-02",
@@ -1214,8 +1214,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "drive/pims/rat_2025.xlsx",
       "texto": "Para cada actividad se registra: finalidad, categorías de datos, base legal, plazo de conservación y áreas responsables.",
-      "score": 0.0752,
-      "score_documento": 0.1303
+      "score": 0.0732,
+      "score_documento": 0.1268
     },
     {
       "chunk_id": "DOC-02-03",
@@ -1225,8 +1225,8 @@
       "responsable": "Oficial de Protección de Datos",
       "ubicacion": "drive/pims/rat_2025.xlsx",
       "texto": "Nota de la Oficina de Protección de Datos: este registro no incluye los tres convenios interinstitucionales firmados en el primer semestre de 2026 ni la nueva plataforma de pagos en línea; se recomienda actualizarlo antes del cierre del año.",
-      "score": 0.1303,
-      "score_documento": 0.1303
+      "score": 0.1268,
+      "score_documento": 0.1268
     }
   ],
   "REQ-11": [
@@ -1234,18 +1234,18 @@
       "chunk_id": "DOC-07-01",
       "id_documento": "DOC-07",
       "tipo": "capacitacion",
-      "fecha_documento": "2025-01-10",
+      "fecha_documento": "2025-11-10",
       "responsable": "Recursos Humanos",
       "ubicacion": "drive/pims/plan_capacitacion.docx",
-      "texto": "Plan de capacitación en seguridad de la información 2026, elaborado por Recursos Humanos el 10 de enero de 2025. Contempla sesiones sobre uso seguro de contraseñas, phishing y manejo de equipos institucionales, dirigidas a todo el personal administrativo y docente.",
-      "score": 0.2284,
+      "texto": "Plan de capacitación en seguridad de la información 2026, elaborado por Recursos Humanos el 10 de noviembre de 2025. Contempla sesiones sobre uso seguro de contraseñas, phishing y manejo de equipos institucionales, dirigidas a todo el personal administrativo y docente.",
+      "score": 0.2271,
       "score_documento": 0.3002
     },
     {
       "chunk_id": "DOC-07-02",
       "id_documento": "DOC-07",
       "tipo": "capacitacion",
-      "fecha_documento": "2025-01-10",
+      "fecha_documento": "2025-11-10",
       "responsable": "Recursos Humanos",
       "ubicacion": "drive/pims/plan_capacitacion.docx",
       "texto": "El plan no incluye, a la fecha de este documento, un módulo específico sobre protección de datos personales ni sobre las obligaciones del personal frente a la Ley N.º 29733; tampoco registra fechas de ejecución ni asistencia.",
@@ -1616,8 +1616,8 @@
       "responsable": "Asesoría Legal",
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matriz de bases legales por finalidad de tratamiento, elaborada por Asesoría Legal el 15 de enero de 2026, vigente para el periodo 2026.",
-      "score": 0.1033,
-      "score_documento": 0.1033
+      "score": 0.1023,
+      "score_documento": 0.1023
     },
     {
       "chunk_id": "DOC-03-02",
@@ -1628,7 +1628,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "Matrícula y gestión académica: base legal de ejecución de contrato educativo. Becas y bienestar: consentimiento expreso del titular o representante legal. Tesorería y cobranza: ejecución contractual y obligación legal tributaria. Investigación con datos de egresados: consentimiento informado y específico.",
       "score": 0.0,
-      "score_documento": 0.1033
+      "score_documento": 0.1023
     },
     {
       "chunk_id": "DOC-03-03",
@@ -1639,7 +1639,7 @@
       "ubicacion": "drive/pims/bases_legales.xlsx",
       "texto": "La matriz se revisa anualmente o cuando se incorpore una nueva finalidad de tratamiento no contemplada.",
       "score": 0.0,
-      "score_documento": 0.1033
+      "score_documento": 0.1023
     }
   ],
   "REQ-14": [

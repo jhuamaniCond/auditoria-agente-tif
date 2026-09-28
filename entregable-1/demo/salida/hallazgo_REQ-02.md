@@ -1,11 +1,11 @@
-# Hallazgo de cumplimiento PIMS — GAP-20260923-001
+# Hallazgo de cumplimiento PIMS — GAP-20260928-001
 
 | Campo | Valor |
 |---|---|
-| Identificador | GAP-20260923-001 |
-| Fecha de revisión | 2026-09-23 20:34:00 |
+| Identificador | GAP-20260928-001 |
+| Fecha de revisión | 2026-09-28 14:52:01 |
 | Requisito | REQ-02 — Evaluacion de impacto en la privacidad (PIA) por proceso que trata PII |
-| Cláusula / control | ISO/IEC 27701:2025 6.1.2, A.1.2 (Evaluacion de impacto) |
+| Cláusula / control | ISO/IEC 27701:2025 6.1.2; A.1.2.6 (Evaluacion de impacto en la privacidad) |
 | Criticidad del requisito | ALTA |
 | Estado de cumplimiento | **SIN EVIDENCIA** |
 | Prioridad de atención | **ALTA** |

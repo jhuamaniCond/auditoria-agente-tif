@@ -1,15 +1,15 @@
-# Hallazgo de cumplimiento PIMS — GAP-20260923-006
+# Hallazgo de cumplimiento PIMS — GAP-20260928-006
 
 | Campo | Valor |
 |---|---|
-| Identificador | GAP-20260923-006 |
-| Fecha de revisión | 2026-09-23 20:34:00 |
+| Identificador | GAP-20260928-006 |
+| Fecha de revisión | 2026-09-28 14:52:01 |
 | Requisito | REQ-07 — Politica de autenticacion segura |
 | Cláusula / control | ISO/IEC 27701:2025 A.3.23 (Autenticacion segura) |
 | Criticidad del requisito | MEDIA |
 | Estado de cumplimiento | **PARCIAL** |
 | Prioridad de atención | **BAJA** |
-| Tipo de evidencia esperada | politica |
+| Tipo de evidencia esperada | politica, procedimiento |
 | Estado del hallazgo | ABIERTO — pendiente de atención por el Oficial de Protección de Datos |
 
 ## 1. Qué exige el requisito (criterio)

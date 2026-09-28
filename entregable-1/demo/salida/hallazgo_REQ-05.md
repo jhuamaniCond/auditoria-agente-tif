@@ -1,11 +1,11 @@
-# Hallazgo de cumplimiento PIMS — GAP-20260923-005
+# Hallazgo de cumplimiento PIMS — GAP-20260928-005
 
 | Campo | Valor |
 |---|---|
-| Identificador | GAP-20260923-005 |
-| Fecha de revisión | 2026-09-23 20:34:00 |
+| Identificador | GAP-20260928-005 |
+| Fecha de revisión | 2026-09-28 14:52:01 |
 | Requisito | REQ-05 — Procedimiento para atender derechos ARCO de los titulares |
-| Cláusula / control | ISO/IEC 27701:2025 A.1.3.2 (Obligaciones con los titulares de PII) |
+| Cláusula / control | ISO/IEC 27701:2025 A.1.3.2, A.1.3.7 y A.1.3.10 (obligaciones y solicitudes de los titulares) |
 | Criticidad del requisito | MEDIA |
 | Estado de cumplimiento | **PARCIAL** |
 | Prioridad de atención | **BAJA** |

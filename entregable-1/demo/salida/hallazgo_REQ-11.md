@@ -1,11 +1,11 @@
-# Hallazgo de cumplimiento PIMS — GAP-20260923-007
+# Hallazgo de cumplimiento PIMS — GAP-20260928-007
 
 | Campo | Valor |
 |---|---|
-| Identificador | GAP-20260923-007 |
-| Fecha de revisión | 2026-09-23 20:34:00 |
+| Identificador | GAP-20260928-007 |
+| Fecha de revisión | 2026-09-28 14:52:01 |
 | Requisito | REQ-11 — Capacitacion del personal en proteccion de datos personales |
-| Cláusula / control | ISO/IEC 27701:2025 7.2 (Competencia) |
+| Cláusula / control | ISO/IEC 27701:2025 7.2 (Competencia); A.3.17 (sensibilizacion y capacitacion) |
 | Criticidad del requisito | MEDIA |
 | Estado de cumplimiento | **PARCIAL** |
 | Prioridad de atención | **BAJA** |
