@@ -69,6 +69,8 @@ CSV con el corpus documental (en cualquier orden de columnas):
   decide la recuperación (RAG) más la lectura del modelo, no el usuario.
 - Un documento puede cubrir varios requisitos (y hacerlo bien en unos y mal
   en otros): no lo trates como "un documento = un requisito".
+- El CSV puede venir con saltos de línea Windows (`\r\n`) o Unix (`\n`), con o
+  sin BOM; si viene de Excel en ANSI, indexa con `--encoding cp1252`.
 
 ## Pasos
 
@@ -124,6 +126,13 @@ CSV con el corpus documental (en cualquier orden de columnas):
    requisito `PARCIAL` o `SIN_EVIDENCIA`, y reporta qué documentos del
    corpus no fueron citados como evidencia por ningún requisito (pueden ser
    irrelevantes, o evidencia real que el modelo pasó por alto — revísalos).
+   Con `--indice` el script **hace cumplir el paso 4**: aborta si un
+   `chunk_id` citado no existe en el índice o si un veredicto
+   CUBIERTO/PARCIAL no cita ningún fragmento, y **advierte** (sin cambiar el
+   veredicto) cuando la fecha de un documento citado supera su
+   `vigencia_max_dias` o cuando un CUBIERTO no cita el tipo de evidencia
+   esperado. Usa `--fecha-revision yyyy-mm-dd` para una corrida reproducible
+   (la demo la fija) y `--sin-revision-vigencia` para desactivarla.
 
 6. **Generar el tablero.**
    ```
@@ -189,7 +198,12 @@ al modelo; para una lectura nueva, sigue el paso 4 sobre
 - La lectura y el juicio de suficiencia (paso 4) los hace el modelo: no es
   determinista, dos ejecuciones podrían diferir en casos límite. Por eso
   cada hallazgo cita el fragmento exacto (`chunk_id`) que sustenta el
-  veredicto — es revisable aunque no sea reproducible bit a bit.
+  veredicto — es revisable aunque no sea reproducible bit a bit, y el
+  formateo de matriz (paso 5) **no deja pasar** citas inexistentes ni
+  veredictos CUBIERTO/PARCIAL sin cita, y advierte la evidencia fuera de
+  `vigencia_max_dias`. Las métricas de la recuperación (recall/precisión
+  sobre el corpus demo) están documentadas en `entregable-1/02-creacion-de-skill.md`
+  §4.1, y las pruebas del pipeline en `tests/` del repositorio.
 - No accede a sistemas ni repositorios documentales: trabaja sobre el CSV que
   se le entrega. Si el usuario da PDFs u otros formatos, hay que extraer el
   texto primero (paso 1).
