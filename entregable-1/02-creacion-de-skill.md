@@ -155,7 +155,18 @@ Dos decisiones de diseño, siguiendo la práctica estándar de esta técnica:
 - `evaluacion.csv` exige una fila por cada uno de los 15 requisitos
   (`generar_matriz_cumplimiento.py` falla si falta alguno) y cita el
   `chunk_id` exacto, para que cualquier hallazgo sea verificable releyendo el
-  fragmento.
+  fragmento. **Desde esta versión el script lo hace cumplir**: si un
+  `chunk_id` citado no existe en el índice, o un veredicto CUBIERTO/PARCIAL
+  no cita ningún fragmento, la matriz no se genera y el error dice exactamente
+  qué fila corregir.
+- El control de vigencia (`vigencia_max_dias` de `requisitos.json`) también
+  se ejecuta: la matriz advierte (sin alterar el veredicto, que sigue siendo
+  del modelo) cuando la fecha de un documento citado supera la vigencia
+  máxima del requisito, y cuando un CUBIERTO no cita ningún tipo de evidencia
+  esperada.
+- `python -m unittest discover -s tests` (raíz del repo) ejecuta 24 pruebas
+  de stdlib que cubren troceo CRLF/BOM, errores claros de entrada, validación
+  de citas, vigencia, prioridad parametrizable y la demo completa end-to-end.
 - Los documentos del corpus que ningún requisito citó como evidencia se
   reportan aparte (no se descartan en silencio): pueden ser irrelevantes o
   evidencia que el modelo pasó por alto.
@@ -178,10 +189,31 @@ Fragmentos recuperados para 15 requisitos (top-4, umbral 0.08)
 $ python scripts/generar_evaluacion_demo.py --salida evaluacion_demo.csv
 Evaluacion de referencia (15 requisitos) escrita
 
-$ python scripts/generar_matriz_cumplimiento.py --evaluacion evaluacion_demo.csv --requisitos ../requisitos.json --indice indice_chunks.json --salida salida
+$ python scripts/generar_matriz_cumplimiento.py --evaluacion evaluacion_demo.csv --requisitos ../requisitos.json --indice indice_chunks.json --salida salida --fecha-revision 2026-07-01
 Requisitos evaluados : 15   Cubiertos: 7   Parciales: 5   Sin evidencia: 3   Hallazgos: 8
 Documentos no citados por ningun requisito: DOC-10, DOC-11
+Citas verificadas: las 21 citas de chunk_id existen en el indice (29 fragmentos); sin --indice el script lo advierte
 ```
+
+### 4.1 Calidad de la recuperación: recall y precisión
+
+Medimos la recuperación léxica de la demo contra un *ground truth* de
+referencia: el documento (o documentos) que realmente trata cada requisito,
+obtenido de las citas de `evaluacion_demo.csv` y verificado a mano.
+
+| Métrica | Valor | Lectura |
+|---|---|---|
+| **Recall** (12 requisitos con documento relevante en el corpus) | **100%** (12/12) | El documento que hace falta **nunca se pierde**: siempre está entre los hasta 4 documentos recuperados por el requisito. |
+| **Precisión** (documentos recuperados que son relevantes) | **29%** (12/42) | Se recupera ruido a propósito: léxico + sinónimos trae documentos que comparten palabras sueltas. |
+| Requisitos sin documento relevante (REQ-02, REQ-08, REQ-13) | 3 | La recuperación trajo 12 documentos irrelevantes en total; la lectura del modelo los descartó y el veredicto fue `SIN_EVIDENCIA` correcto en los 3. |
+
+Es el intercambio deliberado de este diseño: el paso determinista (TF-IDF)
+prioriza **no perder evidencia** (recall alto), y el paso no determinista
+(lectura del modelo) filtra el ruido (precisión baja tolerada). Recuperar de
+más cuesta solo unos párrafos extra en la lectura del requisito; recuperar de
+menos ocultaría una brecha real. El tablero y `resumen.json` dejan además
+constancia de los documentos que nadie citó (DOC-10, DOC-11) para que el
+recuerdo "no recuperado" se revise a mano.
 
 Los 5 casos `PARCIAL` son los que muestran el valor de leer el contenido en
 vez de confiar en el nombre del documento:
