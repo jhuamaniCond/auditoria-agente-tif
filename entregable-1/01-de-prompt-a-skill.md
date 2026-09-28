@@ -4,8 +4,8 @@
 
 ## 1. El prompt de partida
 
-Antes del skill, la tarea se resolvía con un prompt suelto, escrito cada vez
-que hacía falta:
+Sin un skill, la tarea se resuelve con un prompt suelto, escrito cada vez
+que hace falta:
 
 > "Aquí tienes nuestras políticas, procedimientos y contratos. Revisa si eso
 > alcanza para cumplir con la ISO 27701 y dime qué nos falta."
@@ -21,22 +21,19 @@ que hacía falta:
 | "Dime qué nos falta" pide una decisión final que no le corresponde a la herramienta. | Se salta el proceso de auditoría interna (§9.2): la evaluación definitiva la hace el Oficial de Protección de Datos. |
 | No es repetible ni verificable. | No hay forma de demostrar a un auditor externo cómo se llegó a la conclusión de "cubierto" o "falta". |
 
-## 3. Un primer diseño que resultó insuficiente
+## 3. El riesgo de fondo: confiar en lo declarado
 
-La primera versión de este skill pedía un inventario ya resumido, con un
-campo `estado` (vigente/vencida/borrador) que la propia organización
-declaraba. Al revisarlo con más cuidado (y con la observación de la cátedra
-de que conviene preparar evidencias con huecos intencionales para que la
-demo sea convincente) quedó claro que ese diseño repetía el mismo error del
-prompt original: **confiar en lo que alguien te dice sin mirar la evidencia
-real**. Un documento puede llamarse "procedimiento de respuesta a incidentes
-de privacidad" y en realidad no mencionar datos personales en ningún párrafo;
-una política puede declarar "estado: vigente" y no incluir el procedimiento
-que el requisito exige. Si el skill solo mira metadatos declarados, no
-detecta nada de eso — es exactamente el hueco que un agente de cumplimiento
-debería encontrar.
+Además de esos problemas, hay un riesgo de fondo: **confiar en lo que la
+organización declara sin mirar la evidencia real**. Un documento puede
+llamarse "procedimiento de respuesta a incidentes de privacidad" y no
+mencionar datos personales en ningún párrafo; una política puede figurar
+como "vigente" y no incluir el procedimiento que el requisito exige. Si la
+herramienta solo mira nombres, tipos o estados declarados, no detecta nada
+de eso — y es exactamente el hueco que un agente de cumplimiento debe
+encontrar. Por eso el skill hace que el modelo lea el contenido real de cada
+documento.
 
-## 4. Descomposición de la tarea (versión con RAG)
+## 4. Descomposición de la tarea
 
 1. **Corpus documental real, sin etiquetar.** Los documentos de la
    organización (`id_documento, tipo, fecha_documento, responsable,
@@ -55,8 +52,7 @@ debería encontrar.
    `SIN_EVIDENCIA`, citando la frase exacta que sustenta el veredicto. Esto
    ya no es determinista a propósito: la calidad y suficiencia de un
    documento es un juicio, no un cálculo, y forzarlo a ser determinista
-   (como en la primera versión) era justamente lo que ocultaba los huecos
-   reales.
+   ocultaría justamente los huecos reales.
 5. **Salida estructurada.** `resumen.json` (matriz completa), un
    `hallazgo_<REQ-ID>.md` por requisito que necesita atención, y un tablero
    web con semáforos (verde/amarillo/rojo) para una lectura rápida.
@@ -71,7 +67,7 @@ las cláusulas del sistema de gestión (5 a 10) como los controles del Anexo A
 
 ## 6. El prompt, después
 
-Lo que antes era un párrafo ambiguo ahora es una invocación:
+Lo que era un párrafo ambiguo se convierte en una invocación:
 
 > "Evalúa el cumplimiento del PIMS con nuestros documentos
 > (`documentos_empresa_demo.csv`)."
