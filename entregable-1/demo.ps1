@@ -14,7 +14,9 @@ python (Join-Path $skill "scripts\generar_documentos_empresa_demo.py") --salida 
 python (Join-Path $skill "scripts\indexar_documentos.py") --documentos (Join-Path $demo "documentos_empresa_demo.csv") --salida (Join-Path $demo "indice_chunks.json")
 python (Join-Path $skill "scripts\recuperar_fragmentos.py") --indice (Join-Path $demo "indice_chunks.json") --requisitos (Join-Path $skill "requisitos.json") --salida (Join-Path $demo "fragmentos_recuperados.json")
 python (Join-Path $skill "scripts\generar_evaluacion_demo.py") --salida (Join-Path $demo "evaluacion_demo.csv")
-python (Join-Path $skill "scripts\generar_matriz_cumplimiento.py") --evaluacion (Join-Path $demo "evaluacion_demo.csv") --requisitos (Join-Path $skill "requisitos.json") --indice (Join-Path $demo "indice_chunks.json") --salida $salida
+# --fecha-revision fija la fecha de referencia del control de vigencia: la
+# demo produce los mismos advertimientos sin importar cuando se ejecute.
+python (Join-Path $skill "scripts\generar_matriz_cumplimiento.py") --evaluacion (Join-Path $demo "evaluacion_demo.csv") --requisitos (Join-Path $skill "requisitos.json") --indice (Join-Path $demo "indice_chunks.json") --salida $salida --fecha-revision 2026-07-01
 python (Join-Path $skill "scripts\generar_tablero.py") --resumen (Join-Path $salida "resumen.json") --salida (Join-Path $salida "tablero.html")
 
 Write-Host "`nTablero generado en $salida\tablero.html"

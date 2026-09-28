@@ -16,7 +16,9 @@ python "$SKILL/scripts/generar_documentos_empresa_demo.py" --salida "$DEMO/docum
 python "$SKILL/scripts/indexar_documentos.py" --documentos "$DEMO/documentos_empresa_demo.csv" --salida "$DEMO/indice_chunks.json"
 python "$SKILL/scripts/recuperar_fragmentos.py" --indice "$DEMO/indice_chunks.json" --requisitos "$SKILL/requisitos.json" --salida "$DEMO/fragmentos_recuperados.json"
 python "$SKILL/scripts/generar_evaluacion_demo.py" --salida "$DEMO/evaluacion_demo.csv"
-python "$SKILL/scripts/generar_matriz_cumplimiento.py" --evaluacion "$DEMO/evaluacion_demo.csv" --requisitos "$SKILL/requisitos.json" --indice "$DEMO/indice_chunks.json" --salida "$SALIDA"
+# --fecha-revision fija la fecha de referencia del control de vigencia: la
+# demo produce los mismos advertimientos sin importar cuando se ejecute.
+python "$SKILL/scripts/generar_matriz_cumplimiento.py" --evaluacion "$DEMO/evaluacion_demo.csv" --requisitos "$SKILL/requisitos.json" --indice "$DEMO/indice_chunks.json" --salida "$SALIDA" --fecha-revision 2026-07-01
 python "$SKILL/scripts/generar_tablero.py" --resumen "$SALIDA/resumen.json" --salida "$SALIDA/tablero.html"
 
 echo ""
