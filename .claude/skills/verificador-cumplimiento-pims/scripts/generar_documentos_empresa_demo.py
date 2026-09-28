@@ -66,9 +66,9 @@ DOCUMENTOS = [
      "El proveedor se compromete a mantener la disponibilidad del servicio conforme al Anexo de Niveles de Servicio (SLA), y a notificar cualquier interrupción mayor a 4 horas dentro de las 24 horas siguientes.\n\n"
      "El contrato no incluye una cláusula específica de confidencialidad ni de protección de datos personales para el personal del proveedor que tenga acceso a la información institucional; tampoco define el tratamiento en caso de subcontratación (subencargados)."),
 
-    ("DOC-07", "capacitacion", "2025-01-10", "Recursos Humanos",
+    ("DOC-07", "capacitacion", "2025-11-10", "Recursos Humanos",
      "drive/pims/plan_capacitacion.docx",
-     "Plan de capacitación en seguridad de la información 2026, elaborado por Recursos Humanos el 10 de enero de 2025. Contempla sesiones sobre uso seguro de contraseñas, phishing y manejo de equipos institucionales, dirigidas a todo el personal administrativo y docente.\n\n"
+     "Plan de capacitación en seguridad de la información 2026, elaborado por Recursos Humanos el 10 de noviembre de 2025. Contempla sesiones sobre uso seguro de contraseñas, phishing y manejo de equipos institucionales, dirigidas a todo el personal administrativo y docente.\n\n"
      "El plan no incluye, a la fecha de este documento, un módulo específico sobre protección de datos personales ni sobre las obligaciones del personal frente a la Ley N.º 29733; tampoco registra fechas de ejecución ni asistencia."),
 
     ("DOC-08", "reporte", "2026-07-01", "Oficial de Protección de Datos",
